@@ -1,13 +1,10 @@
 PREFIX	=/opt
 BINDIR	=${PREFIX}/bin
 
-all:	bootstrap.sh
+all:	bootstrap.zsh
 
-install:bootstrap.sh
-	install -d ${BINDIR}
-	install -c bootstrap.sh ${BINDIR}/bootstrap
+install:bootstrap.zsh
+	install -D -c bootstrap.zsh ${BINDIR}/bootstrap
 
 uninstall:
 	${RM} ${BINDIR}/bootstrap
-
-check:	bootstrap.sh
