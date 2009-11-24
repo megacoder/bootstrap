@@ -33,9 +33,9 @@ if [ ! -x ./configure ]; then
 	exit 1
 fi
 echo "Running configure with preferred arguments"
-export	CC='ccache gcc -std=gnu99'
+export	CC='ccache gcc -std=gnu99 -march=native'
 export	CFLAGS='-pipe -Os'
-export	CXX='ccache g++'
+export	CXX='ccache g++ -march=native'
 export	CXXFLAGS='-pipe -Os'
 ./configure								\
 	$@
