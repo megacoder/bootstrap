@@ -32,10 +32,14 @@ if [ ! -x ./configure ]; then
 	echo "Could not find or produce a ./configure file!"
 	exit 1
 fi
+case "$(arch)" in
+x86_64 )	CCMODE=-m64;;
+* )		CCMODE=-m32;;
+esac
 echo "Running configure with preferred arguments"
-export	CC='ccache gcc -std=gnu99 -march=native'
+export	CC='ccache gcc -std=gnu99 ${CCMODE}"
 export	CFLAGS='-pipe -Os'
-export	CXX='ccache g++ -march=native'
+export	CXX='ccache g++ ${CCMODE}"
 export	CXXFLAGS='-pipe -Os'
 ./configure								\
 	$@
