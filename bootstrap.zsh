@@ -37,9 +37,9 @@ x86_64 )	CCMODE=-m64;;
 * )		CCMODE=-m32;;
 esac
 echo "Running configure with preferred arguments"
-export	CC='ccache gcc -std=gnu99 ${CCMODE}"
+export	CC="ccache gcc -std=gnu99 ${CCMODE}"
 export	CFLAGS='-pipe -Os'
-export	CXX='ccache g++ ${CCMODE}"
+export	CXX="ccache g++ ${CCMODE}"
 export	CXXFLAGS='-pipe -Os'
 ./configure								\
 	$@
