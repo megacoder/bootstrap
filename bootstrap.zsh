@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+[ "${BOOTSTRAP_VERBOSE}" = "" ] || set -x
 ME=$(basename $0)
 
 VPATH=.
